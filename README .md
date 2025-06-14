@@ -184,7 +184,7 @@ This project is licensed under the MIT License - see the `LICENSE.md` file for d
 ---
 
 **Connect with me:**
-*   YouTube: [[Your YouTube Channel URL\]](https://youtu.be/SfHNHHBNeJc) 
+*   YouTube: [\[\[Your YouTube Channel URL\\]\](https://youtu.be/SfHNHHBNeJc) ](https://youtu.be/ozlTjmSI7r0)
 Use code with caution.
 
 كيفية استخدام هذا القالب:
