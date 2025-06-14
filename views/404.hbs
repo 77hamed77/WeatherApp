@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="{{locale}}" dir="{{#if (eq locale 'ar')}}rtl{{else}}ltr{{/if}}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{__ "notFoundTitle"}} - {{__ "appHeaderTitle"}}</title>
+    <link rel="stylesheet" href="/css/style.css"> <!-- استخدم نفس ملف الـ CSS الرئيسي -->
+    <style>
+        /* تنسيقات إضافية بسيطة لصفحة 404 */
+        .not-found-container {
+            text-align: center;
+            padding: 50px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 70vh;
+        }
+        .not-found-container h1 {
+            font-size: 6em; /* حجم كبير للرقم 404 */
+            color: var(--primary-color);
+            margin-bottom: 0;
+            line-height: 1;
+        }
+        .not-found-container h2 {
+            font-size: 2em;
+            color: var(--secondary-color);
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+        .not-found-container p {
+            font-size: 1.2em;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+        .not-found-container a.home-button {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: var(--primary-color);
+            color: #fff;
+            text-decoration: none;
+            border-radius: var(--border-radius-sm);
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+        .not-found-container a.home-button:hover {
+            background-color: darken(var(--primary-color), 10%);
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <nav class="language-selector">
+            <ul>
+                {{#each locales}}
+                    <li>
+                        <a href="/lang/{{this}}" class="{{#if (eq this ../locale)}}active{{/if}}">
+                            {{#if (eq this "en")}}English{{/if}}
+                            {{#if (eq this "ar")}}العربية{{/if}}
+                        </a>
+                    </li>
+                {{/each}}
+            </ul>
+        </nav>
+        
+        <div class="not-found-container">
+            <h1>404</h1>
+            <h2>{{__ "notFoundTitle"}}</h2>
+            <p>{{__ "notFoundMessage"}}</p>
+            <p>{{__ "notFoundSuggestion"}}</p>
+            <a href="/" class="home-button">{{__ "buttonGoHome"}}</a>
+        </div>
+
+        <footer class="app-footer" style="margin-top: auto;"> <!-- جعل التذييل في الأسفل -->
+            <p>{{{__ "appFooterProviders"}}}</p>
+            <p>{{{__ "appFooterRights" year=(getFullYear) }}}</p>
+        </footer>
+    </main>
+</body>
+</html>
